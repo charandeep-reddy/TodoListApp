@@ -11,6 +11,19 @@
         <div class="login-form">
             <h1>Student Todo List</h1>
             <h2>Login</h2>
+            
+            <?php
+            // Display success message if any
+            if(isset($_GET['success'])) {
+                echo '<div class="success-message">' . htmlspecialchars($_GET['success']) . '</div>';
+            }
+            
+            // Display error message if any
+            if(isset($_GET['error'])) {
+                echo '<div class="error-message">' . htmlspecialchars($_GET['error']) . '</div>';
+            }
+            ?>
+            
             <form action="pages/login_process.php" method="post">
                 <div class="form-group">
                     <label for="username">Username:</label>
