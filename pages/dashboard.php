@@ -165,7 +165,11 @@ $categories_result = mysqli_query($conn, $categories_query);
                     <?php while($task = mysqli_fetch_assoc($result)): ?>
                         <div class="task-card task-priority-<?php echo strtolower($task['priority']); ?>">
                             <div class="task-header">
-                                <h3 class="task-title"><?php echo htmlspecialchars($task['title']); ?></h3>
+                                <h3 class="task-title">
+                                    <a href="task_details.php?id=<?php echo $task['task_id']; ?>">
+                                        <?php echo htmlspecialchars($task['title']); ?>
+                                    </a>
+                                </h3>
                                 <span class="task-status status-<?php echo strtolower($task['status']); ?>">
                                     <?php echo $task['status']; ?>
                                 </span>
